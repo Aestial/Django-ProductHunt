@@ -21,9 +21,10 @@
     </div>
     <div class="col-4">
         <a href="javascript:{document.getElementById('upvote').submit()}">
-            <button class="btn btn-primary btn-lg btn-block">
+            <button class="btn btn-primary btn-lg btn-block" {% if vote %} disabled {% endif %}>
                 <span class="oi oi-thumb-up"></span>
-                Upvote {{ product.votes_total }}                
+                Upvote 
+                {{ count }}                
             </button>
         </a>
     </div>

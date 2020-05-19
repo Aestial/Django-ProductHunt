@@ -7,7 +7,7 @@ class Product(models.Model):
     title = models.CharField(max_length=255, default="Product Title")
     body = models.TextField()
     url = models.TextField()    
-    votes_total = models.IntegerField(default=1)
+    # votes_total = models.IntegerField(default=1)
     pub_date = models.DateField(default=datetime.now)    
     image = models.ImageField(upload_to='images/products/', default='/default/img.png')
     icon = models.ImageField(upload_to='images/products/icons', default='/default/img.png')
@@ -21,3 +21,8 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
+
+# Relation model
+class Vote(models.Model):
+    hunter = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE) 

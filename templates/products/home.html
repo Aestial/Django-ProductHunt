@@ -3,6 +3,7 @@
 {% block content %}
 
 {% for product in products.all %}
+
 <div class="row pt-3">
     <div class="col-2" onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;">
         <img src="{{ product.icon.url }}" class="img-fluid" alt="Icon" />
@@ -17,9 +18,9 @@
     </div>
     <div class="col-3">
         <a href="javascript:{document.getElementById('upvote{{ product.id }}').submit()}">
-            <button class="btn btn-primary btn-lg btn-block">
+            <button class="btn btn-primary btn-block">
                 <span class="oi oi-thumb-up"></span>
-                Upvote {{ product.votes_total }}                
+                Upvote 
             </button>
         </a>
     </div>
